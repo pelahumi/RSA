@@ -1,5 +1,5 @@
 import random
-from .test_prim import is_prime
+from test_prim import is_prime
 
 def generate_prime():
     """
@@ -12,3 +12,4 @@ def generate_prime():
         p = random.randint(100, 500)
         if is_prime(p):
             return p
+        
