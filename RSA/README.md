@@ -6,18 +6,86 @@ Por un lado, se presenta una versión básica del algoritmo desarrollada desde c
 
 Por otro lado, se incluye una segunda versión basada en librerías de criptografía modernas, que implementan RSA de forma completa y segura incluyendo prácticas como el padding o el uso de  claves robustas. El objetivo de esta segunda parte es reflejar cómo es la aplicación de RSA en entornos reales.
 
+<br>
+
 ---
+
+## Índice
+
+ - [Configuración](#1)
+ - [Instalación y dependencias](#2)
+ - [Estructura del proyecto](#3)
+
+<br>
+
+---
+
 
 ## Configuración<a name="1"></a>
 
- - Python 3.10.x
- - Ejecutar:
-   ```pip install -r requirements.txt``` 
-   
->  **Advertencia:** Es necesario instalar las dependencias para poder ejecutar la versión completa de RSA.
+A continuación se enumeran los paquetes necesarios para el correcto funcionamiento del programa.
 
---- 
+ - Python: 3.10.x
+ - [PyCryptodome](https://pypi.org/project/pycryptodome/)
 
-## Cómo ejecutar el programa<a name="2"></a>
+<br>
 
-Primero se debe de cumplir los requisitos anteriores. A continuación ejecutar el script principal de la siguiente manera: ```python main.py```
+---
+
+## Instalación y ejecución<a name="2"></a>
+
+1. Clonar el repositorio en su dispositivo local: 
+```bash 
+git clone https://github.com/pelahumi/Trabajo-de-fin-de-grado.git
+```
+
+2. Instalar las dependencias: 
+```bash
+pip install -r requirements.txt
+```
+
+3. Ejecutar el programa: 
+```bash
+python main.py
+```
+
+<br>
+
+>  **Advertencia:** Es necesario instalar las dependencias para poder ejecutar el programa.
+
+<br>
+
+---
+
+## Estructura del proyecto<a name="3"></a>
+
+Como ya se mencionó anteriormente, el proyecto se divide en dos secciones:
+
+### RSA básico
+
+En la carpeta ```basic_rsa``` se encuentra la estructura de un algoritmo RSA sencillo, desarrollado con el fin de facilitar la comprensión del mismo. El código sigue un enfoque de programación orientada a objetos (POO), donde la clase principal ```RSA``` representa la base del sistema criptográfico.
+
+#### Atributos:
+
+ - p: primer número primo
+ - q: segundo número primo
+ - N: módulo
+ - e: exponente público
+ - d: exponente privado
+ - phi: funcion de Euler de N
+
+ #### Funcionalidades:
+
+La clase incluye métodos para:
+
+ - Generar las claves púbica y privada
+ - Cifrar mensajes
+ - Descifrar mensajes
+
+ #### Funciones auxiliares
+
+ Además, se incluye una carpeta auxiliar ```aux``` donde se incluyen funciones auxiliares utilizadas para:
+
+  - ```test_prim.py```: Determinar si un número es primo.
+  - ```generate_prim.py```: Generar un número primo entre 100 y 500.
+  - ```euler_func.py```: Calcular la función de Euler de N=p*q
