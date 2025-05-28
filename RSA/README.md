@@ -6,13 +6,16 @@ Por un lado, se presenta una versión básica del algoritmo desarrollada desde c
 
 Por otro lado, se incluye una segunda versión basada en librerías de criptografía modernas, que implementan RSA de forma completa y segura incluyendo prácticas como el padding o el uso de  claves robustas. El objetivo de esta segunda parte es reflejar cómo es la aplicación de RSA en entornos reales.
 
+---
+
 ## Configuración<a name="1"></a>
 
  - Python 3.10.x
  - Ejecutar:
    ```pip install -r requirements.txt``` 
    
->  **Nota:** Es necesario instalar las dependencias para poder ejecutar la versión completa de RSA.
+>  **Advertencia:** Es necesario instalar las dependencias para poder ejecutar la versión completa de RSA.
+
 --- 
 
 ## Cómo ejecutar el programa<a name="2"></a>
