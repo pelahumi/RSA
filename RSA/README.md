@@ -91,3 +91,5 @@ La clase incluye métodos para:
   - ```test_prim.py```: Determinar si un número es primo.
   - ```generate_prim.py```: Generar un número primo entre 100 y 500.
   - ```euler_func.py```: Calcular la función de Euler de N=p*q
+
+### RSA Avanzado

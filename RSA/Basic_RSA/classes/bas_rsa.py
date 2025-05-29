@@ -1,4 +1,3 @@
-from Basic_RSA.aux.euler_func import euler
 from Basic_RSA.aux.generate_prim import generate_prime
 import math
 
