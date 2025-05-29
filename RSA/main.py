@@ -5,7 +5,7 @@ if __name__ == "__main__":
     rsa = RSA()
 
     # Este será el mensaje que vamos a cifrar
-    message = 'hola'
+    message = 'capture the flag'
     print(f'Mensaje original: {message}')
 
     # Generamos las claves pública y privada

@@ -3,13 +3,13 @@ from .test_prim import is_prime
 
 def generate_prime():
     """
-    Genera un número primo aleatorio entre 10^5 y 10^6.
+    Genera un número primo aleatorio entre 1000 y 5000.
     
     Returns:
         int: Un número primo aleatorio.
     """
     while True:
-        p = random.randint(100, 500)
+        p = random.randint(1000, 5000)
         if is_prime(p):
             return p
         

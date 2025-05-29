@@ -60,7 +60,6 @@ class RSA():
         # Convertir el mensaje a bytes y luego a un entero
         for char in m:
             m_int = ord(char)
-            print(m_int)
             if m_int >= self.n:
                 raise ValueError(f"El carácter '{char}' es demasiado grande para ser cifrado.")
             c = pow(m_int, self.e, self.n)
@@ -83,7 +82,6 @@ class RSA():
         # Descifrar cada carácter del mensaje cifrado
         for c_int in c:
             m_int = pow(c_int, self.d, self.n)
-            print(m_int)
             m += chr(m_int)
         return m
 
