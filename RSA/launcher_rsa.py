@@ -17,7 +17,7 @@ def launch_rsa():
 
         #### Basic RSA Implementation ####
 
-        from RSA.Basic_RSA.classes.bas_rsa import RSA
+        from .Basic_RSA.classes.bas_rsa import RSA
 
         # Creamos un objeto RSA
         rsa = RSA()
@@ -44,7 +44,7 @@ def launch_rsa():
         
         #### Advanced RSA Implementation ####
 
-        from RSA.Advanced_RSA.adv_rsa import AdvancedRSA
+        from .Advanced_RSA.adv_rsa import AdvancedRSA
 
         # Creamos un objeto RSA avanzado
         rsa = AdvancedRSA()
