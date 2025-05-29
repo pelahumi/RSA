@@ -63,7 +63,7 @@ Como ya se mencionó anteriormente, el proyecto se divide en dos secciones:
 
 ### RSA básico
 
-En la carpeta ```basic_rsa``` se encuentra la estructura de un algoritmo RSA sencillo, desarrollado con el fin de facilitar la comprensión del mismo. El código sigue un enfoque de programación orientada a objetos (POO), donde la clase principal ```RSA``` representa la base del sistema criptográfico.
+En la carpeta ```Basic_rsa``` se encuentra la estructura de un algoritmo RSA sencillo, desarrollado con el fin de facilitar la comprensión del mismo. El código sigue un enfoque de programación orientada a objetos (POO), donde la clase principal ```RSA``` representa la base del sistema criptográfico.
 
 El cifrado se realiza separando el mensaje por caracteres. De cada caracter se obtiene su valor ASCII para poder aplicar operaciones matemáticas sobre ellos. A continuación se aplica la fórmula de cifrado y se obtiene una lista, donde cada elemento es cifrado correspondiente a cada caracter del mensaje. Para el descifrado, se hace la operación inversa y se juntan los elementos de la lista en un único string.
 
@@ -93,3 +93,15 @@ La clase incluye métodos para:
   - ```euler_func.py```: Calcular la función de Euler de N=p*q
 
 ### RSA Avanzado
+
+En la carpeta ```Advanced_RSA``` se encuentra la implementación de RSA utilizando la librería ```PyCryptodome```. Esta librería permite aplicar una versión segura y moderna del algoritmo, incluyendo el uso de padding OAEP (Optimal Asymmetric Encryption Padding), así como la codificación del mensaje cifrado en formato ```Base64``` para facilitar su almacenamiento o transmisión.
+
+Gracias a la robustez de esta librería, se garantiza un cifrado mucho más seguro y resistente frente a ataques comunes. Además, permite gestionar claves de tamaño considerable (por ejemplo, 2048 o 4096 bits), lo que mejora significativamente la seguridad frente a la versión básica.
+
+El proceso general seguido en esta implementación es conceptualmente el mismo que en la versión didáctica:
+
+ - Generación de claves RSA con tamaño configurable
+ - Cifrado del mensaje con clave pública
+ - Descifrado del mensaje con clave privada
+
+> Nota: aunque RSA permite cifrar mensajes directamente, su uso en entornos reales suele combinarse con algoritmos simétricos (AES, por ejemplo) para el manejo eficiente de mensajes largos, esta práctica se conoce como *cifrado híbrido*.
