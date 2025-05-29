@@ -16,6 +16,10 @@ def is_prime(p):
     elif p == 2:
         return True
     
+    # Comprobamos si p es par
+    elif p % 2 == 0:
+        return False
+    
     else:
         # Bucle para comprobar si p es primo, saltando los pares hasta la raíz cuadrada de p
         for i in range(3, int(p**0.5) + 1, 2):

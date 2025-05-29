@@ -1,7 +1,5 @@
-from RSA.aux.euler_func import euler
-from RSA.aux.prime import is_prime
-from RSA.aux.generate_prim import generate_prime
-import random
+from Basic_RSA.aux.euler_func import euler
+from Basic_RSA.aux.generate_prim import generate_prime
 import math
 
 class RSA():
@@ -26,31 +24,30 @@ class RSA():
         while self.p == self.q:
             self.q = generate_prime() 
 
+        print(f"p: {self.p}, q: {self.q}")
+
         # Calcular N
         self.n = self.p * self.q
 
         # Calcular φ(N)
-        self.phi = euler(self.n, self.p, self.q)
+        self.phi = (self.p - 1) * (self.q - 1)
 
         # Elegir el exponente público e
-        self.e = random.randint(2, self.phi - 1)
-
-        # Asegurarse de que e y phi(N) son coprimos
-        while math.gcd(self.e, self.phi) != 1: 
-            self.e = random.randint(2, self.phi - 1)
+        self.e = 65537  # Un valor común para e, debe ser coprimo con φ(N)
+        if self.e >= self.phi:
+            raise ValueError(f"El exponente público e {self.e} debe ser menor que φ(N) {self.phi}.")
+        if math.gcd(self.e, self.phi) != 1:
+            raise ValueError(f"El exponente público e {self.e} no es coprimo con φ(N) {self.phi}.")
 
         # Calcular el exponente privado d
         self.d = pow(self.e, -1, self.phi)
 
         # Devuelve las claves
-        print("Claves generadas:")
-        print(f"Clave pública: ({self.n}, {self.e})")
-        print(f"Clave privada: ({self.n}, {self.d})")
         return (self.n, self.e), (self.n, self.d)
     
     def encrypt(self, m):
         """
-        Cifra un mensaje usando la clave pública.
+        Cifra un mensaje caracter a caracter usando la clave pública.
 
         Args:
             message (str): Mensaje a cifrar (texto plano).
@@ -58,17 +55,18 @@ class RSA():
             c (int): Mensaje cifrado.
         """
 
-         # Convertir el mensaje a bytes
-        m_int = int.from_bytes(m.encode('utf-8'), byteorder='big')
+        cipher = []
 
-        # Comprobar que el mensaje es menor que N
-        if m_int >= self.n:
-            raise ValueError("El mensaje es demasiado grande para ser cifrado.")
-        
-        # Cifrar el mensaje usando la fórmula c = m^e mod N
-        c = pow(m_int, self.e, self.n)
+        # Convertir el mensaje a bytes y luego a un entero
+        for char in m:
+            m_int = ord(char)
+            print(m_int)
+            if m_int >= self.n:
+                raise ValueError(f"El carácter '{char}' es demasiado grande para ser cifrado.")
+            c = pow(m_int, self.e, self.n)
+            cipher.append(c)
 
-        return c
+        return cipher
     
     def decrypt(self, c):
         """
@@ -80,12 +78,13 @@ class RSA():
             m (str): Mensaje descifrado (texto plano).
         """
 
-        # Descifrar el mensaje usando la fórmula m = c^d mod N
-        m_int = pow(c, self.d, self.n)
+        m = ''
 
-        # Convertir el mensaje de bytes a string
-        m = m_int.to_bytes((m_int.bit_length() + 7) // 8, byteorder='big').decode('utf-8')
-
+        # Descifrar cada carácter del mensaje cifrado
+        for c_int in c:
+            m_int = pow(c_int, self.d, self.n)
+            print(m_int)
+            m += chr(m_int)
         return m
 
 

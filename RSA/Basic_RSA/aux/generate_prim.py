@@ -1,9 +1,9 @@
 import random
-from test_prim import is_prime
+from .test_prim import is_prime
 
 def generate_prime():
     """
-    Genera un número primo aleatorio entre 100 y 500.
+    Genera un número primo aleatorio entre 10^5 y 10^6.
     
     Returns:
         int: Un número primo aleatorio.
