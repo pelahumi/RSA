@@ -1,3 +1,6 @@
+from Basic_RSA.classes.bas_rsa import RSA
+from Advanced_RSA.adv_rsa import AdvancedRSA
+
 
 def launch_rsa():
     """
@@ -16,8 +19,6 @@ def launch_rsa():
     if choice == '1':
 
         #### Basic RSA Implementation ####
-
-        from .Basic_RSA.classes.bas_rsa import RSA
 
         # Creamos un objeto RSA
         rsa = RSA()
@@ -43,8 +44,6 @@ def launch_rsa():
     elif choice == '2':
         
         #### Advanced RSA Implementation ####
-
-        from .Advanced_RSA.adv_rsa import AdvancedRSA
 
         # Creamos un objeto RSA avanzado
         rsa = AdvancedRSA()
