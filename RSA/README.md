@@ -65,6 +65,8 @@ Como ya se mencionó anteriormente, el proyecto se divide en dos secciones:
 
 En la carpeta ```basic_rsa``` se encuentra la estructura de un algoritmo RSA sencillo, desarrollado con el fin de facilitar la comprensión del mismo. El código sigue un enfoque de programación orientada a objetos (POO), donde la clase principal ```RSA``` representa la base del sistema criptográfico.
 
+El cifrado se realiza separando el mensaje por caracteres. De cada caracter se obtiene su valor ASCII para poder aplicar operaciones matemáticas sobre ellos. A continuación se aplica la fórmula de cifrado y se obtiene una lista, donde cada elemento es cifrado correspondiente a cada caracter del mensaje. Para el descifrado, se hace la operación inversa y se juntan los elementos de la lista en un único string.
+
 #### Atributos:
 
  - p: primer número primo
