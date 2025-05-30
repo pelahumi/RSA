@@ -1,7 +1,7 @@
 from Basic_RSA.aux.generate_prim import generate_prime
 import math
 
-class RSA():
+class BasicRSA():
     """
     Clase que representa el algoritmo RSA para cifrado y descifrado de mensajes.
     """

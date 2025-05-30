@@ -1,4 +1,4 @@
-from Basic_RSA.classes.bas_rsa import RSA
+from Basic_RSA.classes.bas_rsa import BasicRSA
 from Advanced_RSA.adv_rsa import AdvancedRSA
 
 
@@ -21,7 +21,7 @@ def launch_rsa():
         #### Basic RSA Implementation ####
 
         # Creamos un objeto RSA
-        rsa = RSA()
+        rsa = BasicRSA()
 
         # Este será el mensaje que vamos a cifrar
         message = 'capture the flag'
