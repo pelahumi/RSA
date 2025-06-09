@@ -26,7 +26,7 @@ Por otro lado, se incluye una segunda versión basada en librerías de criptogra
 A continuación se enumeran los paquetes necesarios para el correcto funcionamiento del programa.
 
  - Python: 3.10.x
- - [PyCryptodome](https://pypi.org/project/pycryptodome/)
+ - [PyCryptodome](https://pypi.org/project/pycryptodome/): 3.23.0
 
 <br>
 
@@ -39,19 +39,26 @@ A continuación se enumeran los paquetes necesarios para el correcto funcionamie
 git clone https://github.com/pelahumi/Trabajo-de-fin-de-grado.git
 ```
 
-2. Instalar las dependencias: 
+2. Navegar hasta la carpeta RSA:
+```bash
+cd Trabajo-de-fin-de-grado/RSA
+```
+
+3. Instalar las dependencias: 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Ejecutar el programa: 
+4. Ejecutar el programa: 
 ```bash
 python main.py
 ```
 
+5. Una vez ejecutado el programa, se abrirá un menú donde el usuario puede seleccionar que tipo de versión de RSA quiere ejecutar.
+
 <br>
 
->  **Advertencia:** Es necesario instalar las dependencias para poder ejecutar el programa.
+>  **Advertencia:** Es necesario instalar las dependencias para poder ejecutar la versión avanzada del programa.
 
 <br>
 
